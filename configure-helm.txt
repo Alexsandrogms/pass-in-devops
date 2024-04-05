@@ -1,0 +1,30 @@
+# Instalação do helm (https://helm.sh/docs/intro/install/)
+
+* Criando o diretório do helm no projeto.
+
+> helm create deploy
+
+* Criando os serviços que estão na pasta deploy
+
+> helm upgrade --install <service_name> <directory_name> -n <namespace>
+
+# Adicionado o ArgoCD no qual é uma ferramenta declarativa de entrega contínua de GitOps para Kubernetes. ArgoCD (https://argo-cd.readthedocs.io/en/stable/?_gl=1*rjhu1q*_ga*MTAyNTEzNTU4Mi4xNzEyMzIzMDc2*_ga_5Z1VTPDL73*MTcxMjMyMzA3NS4xLjAuMTcxMjMyMzA3NS4wLjAuMA..)
+
+* Começo rápido
+
+> kubectl create namespace argocd
+> kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+
+* Listar todos os serviços criados pelo argocd.
+
+> kubectl get svc -n argocd
+
+* Criando uma conexão externa para acessar a interface do argo.
+
+> kubectl port-forward svc/argocd-server -n argocd <port_machine>:80
+
+* Realizando login no argocd
+
+> Username: admin
+> Password: !> Acesse o software do Lens, selecione o namespace do argocd, acesse a aba [secretes] agora a opção [argocd-initial-admin-secret] é copie o password.

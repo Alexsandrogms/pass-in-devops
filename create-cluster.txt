@@ -1,0 +1,29 @@
+# K3D = https://k3d.io/v5.6.0/#releases
+
+* Criando o cluster com o k3d
+
+> k3d cluster create <cluster_name> --servers <server_amount>
+
+* Observação: Sempre verificar se o cluster criado está em execução, utilize os comandos para verificar:
+
+> k3d cluster list 
+> k3d cluster stop <cluster_name>
+> k3d cluster start <cluster_name>
+
+* Obtendo informações do cluster criado
+
+> kubectl cluster-info
+
+* Criando o namespace
+
+> kubectl create ns <namespace>
+
+* Criando um deployment
+
+> kubectl apply <directory_files> -n <namespace_name>
+Ou
+> kubectl apply -f <file_name> -n <namespace_name>
+
+* Criando uma conexão com um pod
+
+> kubectl port-forward pod/<pod_name> -n <namespace> <machine_port>:<container_port>
