@@ -2,7 +2,7 @@ replicaCount: 4
 image:
   repository: alexgms/pass-in
   pullPolicy: Always
-  tag: 1c18aae
+  tag: a022f50
   port: 3333
 imagePullSecrets: []
 nameOverride: ''
